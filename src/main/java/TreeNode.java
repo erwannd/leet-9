@@ -20,26 +20,6 @@ public class TreeNode {
                 '}';
     }
 
-    private TreeNode deserializeFromArray(Integer[] arr) {
-        Queue<TreeNode> q = new LinkedList<>();
-        TreeNode root = new TreeNode();
-        q.add(root);
-        int index = 0;
-        while (!q.isEmpty() && index < arr.length) {
-            TreeNode prev;
-            TreeNode current = q.remove();
-            if (arr[index] != null) {
-                current.val = arr[index];
-                current.left = new TreeNode();
-                q.add(current.left);
-                current.right = new TreeNode();
-                q.add(current.right);
-            }
-            index++;
-        }
-        return root;
-    }
-
     public void printPreorder() {
         printPreorder(this);
         System.out.println();
